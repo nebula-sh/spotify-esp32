@@ -5,11 +5,11 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h>  
 
-const char* ssid = "WiFi_6_2G";
-const char* password = "12345677";
+const char* ssid = "ssid";
+const char* password = "pass";
 
 // spotify token, refresh hourly
-const String accessToken = "BQA--qjtuELw4lM81SYBAGmycHkwAgBTvRZEDcrnR0ryWqUuVPdHBic_bMszUNOyivDUzOyPvgqHZDw-KgBWUnXLfMxYK5TpsQMgrNzEdFDCKsC28kwV8q1nGLUjwJAsDPxb14xZIUHPjo-VvMHaEG4lIYqPEJonq3SGV5z0k0Nts6LS8jRYsgPeDErrTlvnyFzg2FA0NDdPcMJj27bdfpkbiqUijmOV";  // Replace with your actual access token
+const String accessToken = "token";  // replace with token
 
 hd44780_I2Cexp lcd; 
 
@@ -23,10 +23,8 @@ void setup() {
   }
   Serial.println("Connected to WiFi");
 
-  // LCD Setup
   lcd.begin(16, 2);  // 16x2 LCD
 
-  // Initial song info fetch
   getCurrentSong();
 }
 
